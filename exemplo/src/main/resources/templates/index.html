@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciamento de Itens</title>
+    <script defer src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="content-wrapper" id="barraCarrinho">
+    <div class="container">
+        <div class="titulo">Gerenciamento de Itens</div>
+        <div>
+            <img class="carrinho" id="carrinho" src="images/carrinho3.png" alt="Carrinho de Compras" height="40px" onclick="toogleCarrinho()">
+        </div>
+    </div>
+
+    <form id="addItemForm">
+        <h2>Adicionar Item</h2>
+        Nome: <input type="text" id="addNome"><br>
+        Quantidade: <input type="number" id="addQuantidade"><br>
+        Valor: <input type="number" step="0.01" id="addValor"><br>
+        Descritivo: <input type="text" id="addDescritivo"><br>
+        <button type="button" onclick="addItem()">Adicionar</button>
+    </form>
+
+    <form id="updateItemForm">
+    <h2>Atualizar Item</h2>
+    <span id="updateId" readonly></span>
+    Nome: <input type="text" id="updateNome"><br>
+    Quantidade: <input type="number" id="updateQuantidade"><br>
+    Valor: <input type="number" step="0.01" id="updateValor"><br>
+    Descritivo: <input type="text" id="updateDescritivo"><br>
+    <button type="button" onclick="updateItem()">Atualizar</button>
+    <button type="button" onclick="cancelUpdateItem()">Cancelar</button>
+    </form>
+
+    <form id="listItemForm">
+    <h2>Lista de Itens</h2>
+        <ul id="itemsList"></ul>
+    </form>
+</div>
+
+<!-- Barra Lateral do Carrinho -->
+<aside id="carrinhoResumo" class="carrinho-lateral">
+    <h2>Resumo do Carrinho</h2>
+    <div id="itensCarrinho">
+        <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+    </div>
+    <div class="carrinho-totais">
+        <p>Total Itens: <span id="totalItens">0</span></p>
+        <p>Total Valor: R$<span id="totalValor">0,00</span></p>
+        <button onclick="hideCarrinho()">Ocultar Carrinho</button>
+    </div>
+</aside>
+
+</body>
+</html>
+
